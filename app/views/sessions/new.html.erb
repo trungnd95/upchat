@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_tag sessions_path, class: "login_form" do  %>
+      <%= label_tag :email %>
+      <%= email_field_tag :email, params[:email], placeholder: "Email", class: "form-control" %>
+      <%= label_tag :password %>
+      <%= password_field_tag :password, nil, placeholder: "Password", class: "form-control" %>
+      <button type="reset" class="btn btn-warning">
+        <%= t "page.front-end.action.reset" %>
+      </button>
+      <%= submit_tag 'Login', class: "btn btn-primary" %>
+      <hr>
+      <p>
+        New user: <%= link_to 'Sign up', root_path %>
+       </p>
+    <% end %>
+  </div>
+</div>
