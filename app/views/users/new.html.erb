@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= render "shared/error_messages" %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control" %>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-control" %>
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+      <button type="reset" class="btn btn-warning">
+        <%= t "page.front-end.action.reset" %>
+      </button>
+      <%= f.submit 'Create', class: "btn btn-primary" %>
+      <hr>
+      <p><%= link_to "Login", new_session_path %></p>
+    <% end %>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Upchat</title>
+    <title>Trung Manucian Chat</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="wrapper">
+      <!-- <div class="container"> -->
+        <%= render "partials/header" %>
+        <%= render "partials/navbar" %>
+        <div class="container" style="margin-bottom: 100px; min-height: 300px">
+          <div class="row">
+            <%= flash_messages %>
+            <br/>
+            <%= yield %>
+          </div>
+        </div>
+        <%= render "partials/footer" %>
+      <!-- </div> -->
+    </div>
   </body>
 </html>
