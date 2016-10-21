@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
   def logged_in_user
     unless logged_in?
-      flash[:danger] = "You must login to access this page!"
+      flash[:info] = "You must login to access this page!"
       redirect_to new_session_path
     end
   end

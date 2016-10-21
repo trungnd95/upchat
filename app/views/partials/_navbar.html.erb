@@ -8,31 +8,33 @@
     </li>
   </ul>
   <ul class="nav navbar-nav navbar-right">
-    <li class="feedback">
-      <%= link_to '#' do %>
-        <i class="fa fa-book" aria-hidden="true"></i>
-        <%= t "page.master.menu.courses" %>
-      <% end %>
-    </li>
-    <li class="words">
-      <%= link_to('#') do %>
-        <i class="fa fa-file-text-o" aria-hidden="true"></i>
-        <%= t "page.master.menu.words" %>
-      <% end %>
-    </li>
-
       <li class="signup">
-        <%= link_to '#' do %>
-          <i class="fa fa-registered" aria-hidden="true"></i>
-          <%= t("page.master.menu.signup") %>
+        <%= link_to users_path do %>
+          <i class="fa fa-users" aria-hidden="true"></i>
+          Users
         <% end %>
       </li>
-      <li>
-        <%= link_to '#' do %>
-          <i class="fa fa-sign-in" aria-hidden="true"></i>
-          <%= t("userLink.login") %>
-        <% end %>
-      </li>
+      <% unless logged_in? %>
+        <li class="signup">
+          <%= link_to new_user_path do %>
+            <i class="fa fa-registered" aria-hidden="true"></i>
+            Create New Account
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_session_path do %>
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+            Login
+          <% end %>
+        </li>
+      <% else %>
+        <li class="logout">
+          <%= link_to(logout_path ,method: :delete) do %>
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+            Logout
+          <% end  %>
+        </li>
+      <% end %>
 
   </ul>
 </div>
