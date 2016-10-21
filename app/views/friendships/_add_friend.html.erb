@@ -1,0 +1,16 @@
+ <li class="left clearfix">
+  <span class="chat-img pull-left">
+    <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle">
+  </span>
+  <div class="chat-body clearfix">
+    <div class="header">
+      <strong class="primary-font"><%= f.name %></strong>
+    </div>
+    <div class="pull-right btn-accept">
+    <%= link_to(friendships_path(friend_id: f.id), :method => :post, class: "btn btn-primary") do %>
+      <i class="fa fa-plus" aria-hidden="true"></i>
+      Add
+      <% end %>
+    </div>
+  </div>
+</li>

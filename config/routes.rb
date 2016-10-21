@@ -9,4 +9,10 @@ Rails.application.routes.draw do
       get :received
     end
   end
+
+  resources :friendships do
+    collection do
+      get 'accept/:user_request_id' => 'friendships#accept', as: :accept
+    end
+  end
 end

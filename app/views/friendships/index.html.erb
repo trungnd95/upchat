@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="panel panel-default">
+        <div class="panel-heading text-center">
+          <i class="fa fa-users" aria-hidden="true"></i> You have <%= pluralize(@friends.size, 'friend') %>
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+          <ul class="list-friends" style="list-style: none">
+            <% @friends.each do |friend| %>
+              <%= render 'friend', friend: friend %>
+            <% end %>
+          </ul>
+        </div>
+        <!-- /.panel-body -->
+      </div>
+    </div>
+    <!-- /.col-lg-8 -->
+    <div class="col-lg-4">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading text-center">
+              <i class="fa fa-user-times" aria-hidden="true"></i> Your's friends request
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+              <div class="list-group">
+                <ul class="list-requests">
+                  <% if @friends_request.size > 0 %>
+                  <% @friends_request.each do |request| %>
+                  <%= render 'friend_request', request: request %>
+                  <% end %>
+                  <% else %>
+                  You have no friend request
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading text-center">
+              <i class="fa fa-user-plus" aria-hidden="true"></i>
+               Add more friends
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+              <div class="list-group">
+                <ul class="list-requests">
+                  <% if @not_friends.size > 0 %>
+                  <% @not_friends.each do |f| %>
+                  <%= render 'add_friend', f: f %>
+                  <% end %>
+                  <% else %>
+                  You have no friend to add
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

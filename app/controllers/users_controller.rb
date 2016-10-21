@@ -1,7 +1,14 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user
+  before_action :logged_in_user, except: [:new, :create]
 
   def index
+  end
+
+  def show
+    # if current_user.has_friend_requests? (User.last)
+    #   render text: "#{current_user.name} has request form #{User.last.name} exception"
+    # end
+    render json: current_user.friend_of_mines
   end
 
   def new

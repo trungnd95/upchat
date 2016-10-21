@@ -295,6 +295,28 @@ form.new_user {
   border : 1px solid rgba(247,8,40,1) transparent;
 }
 
+.list-requests {
+  list-style-type: none;
+  li {
+    border: 1px solid #ccc;
+    margin-left: -4rem;
+    div.chat-body {
+      margin-top: 1.5rem;
+      margin-left: 6rem;
+      .btn-accept {
+        margin-top: -3rem;
+        margin-right: 2rem;
+      }
+    }
+  }
+}
+
+.friend-item {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
 
 //=== Footer style == //
 footer {
@@ -302,4 +324,6 @@ footer {
   padding: 20px;
   background-image : linear-gradient(to bottom,#fff 0,#f8f8f8 100%);
 }
+
+
 
