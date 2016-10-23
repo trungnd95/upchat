@@ -1,0 +1,17 @@
+<li class="left clearfix friend-item">
+    <span class="chat-img pull-left">
+        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle">
+    </span>
+    <div class="chat-body clearfix" style="margin-left: 8rem; margin-top: .5rem">
+        <div class="header">
+            <strong class="primary-font">Recipient: <%= msg.recipient.name %></strong>
+        </div>
+        <div class="body">
+            <p>
+              <strong>Content: </strong> <span><%= msg.body %></span>
+              <span class="pull-right text-muted small"><em><%= msg.created_at %></em></span>
+            </p>
+            <p><u><%= !msg.read_at ? "(Unread)" : "(Read)" %></u></p>
+        </div>
+    </div>
+</li>

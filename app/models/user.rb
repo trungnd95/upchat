@@ -2,8 +2,8 @@ class User < ApplicationRecord
   has_secure_password
 
   #relationship with message
-  has_many :sent_messages, class_name: 'Message', foreign_key: 'sender_id'
-  has_many :received_messages, class_name: 'Message', foreign_key: 'recipient_id'
+  has_many :sent_messages, class_name: 'Message', foreign_key: 'sender_id', dependent: :destroy
+  has_many :received_messages, class_name: 'Message', foreign_key: 'recipient_id', dependent: :destroy
   #relationship with user
   has_many :friendships, dependent: :destroy
   has_many :friend_of_mines, through: :friendships, source: :friend

@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     unless @user.nil?
       if @user.authenticate params[:password]
         session[:user_id] = @user.id
-        redirect_to root_path, flash: {success: "Welcome to Trung Manucian chat app"}
+        redirect_to messages_path, flash: {success: "Welcome to Trung Manucian chat app"}
       else
         flash.now[:error] = "Some thing went wrong!. Permission denied"
         render action: :new

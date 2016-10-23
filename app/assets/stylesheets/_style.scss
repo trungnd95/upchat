@@ -1,4 +1,5 @@
 // === Header style ====//
+
 i {
   margin-right : 5px;
 }
@@ -318,6 +319,14 @@ form.new_user {
   border-radius: 10px;
 }
 
+.not_read {
+  background-color: #bdc3c7;
+}
+
+.add_message {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
 //=== Footer style == //
 footer {
   border-top: 2px solid #bdc3c7;
