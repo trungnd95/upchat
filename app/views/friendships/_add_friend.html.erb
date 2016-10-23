@@ -4,7 +4,7 @@
   </span>
   <div class="chat-body clearfix">
     <div class="header">
-      <strong class="primary-font"><%= f.name %></strong>
+      <strong class="primary-font"><%= f.name %>(<%= f.email %>)</strong>
     </div>
     <div class="pull-right btn-accept">
     <%= link_to(friendships_path(friend_id: f.id), :method => :post, class: "btn btn-primary") do %>
